@@ -4,6 +4,8 @@ echo -e "Digite uma interface de rede:\n"
 
 read interface
 
-echo -e "Informações da interface de rede $interface:\n"
+echo -e "\nEndereço IP da interface $interface:\n"
 
-ifconfig $interface
+result=$(ifconfig $interface | grep "inet" | head -n1)
+
+echo $result | cut -d' ' -f2
