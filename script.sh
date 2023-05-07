@@ -1,9 +1,9 @@
 #!/bin/bash
 
-echo -e "Interfaces de rede:\n"
+echo -e "Digite uma interface de rede:\n"
 
-ifconfig
+read interface
 
-echo -e "Processos sendo executados:\n"
+echo -e "Informações da interface de rede $interface:\n"
 
-ps aux
+ifconfig $interface
